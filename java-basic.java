@@ -1,6 +1,6 @@
 // 1. Write a Java program to read and print elements of array.
 
-public class Main {
+public class PrintArray {
     public static void main(String[] args) {
         // Declare and initialize an array with elements
         int[] arr = { 1, 2, 3, 4, 5 };
@@ -65,7 +65,7 @@ public class SumOfArray {
 
 // 4. Write a Java program to find maximum and minimum element in an array. 
 
-public class Main {
+public class MaxMin {
   public static void main(String[] args) {
     // Declare and initialize array with elements
     int[] arr = {3, 4, 5, 9, 1, 4, 6, 7, 2};
