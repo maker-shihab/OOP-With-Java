@@ -226,8 +226,40 @@ public class ArrayInsertionExample {
 Contents of newArray: 1 2 10 3 4 5 
 */
 
+// 10.Write a Java program to delete an element from an array at specified position.
+
+public class ArrayDeletionExample {
+    public static void main(String[] args) {
+        int[] originalArray = {1, 2, 3, 4, 5};
+        int deletePosition = 2;  // The position from which to delete the element
+
+        if (deletePosition < 0 || deletePosition >= originalArray.length) {
+            System.out.println("Invalid delete position");
+            return;
+        }
+
+        int newSize = originalArray.length - 1;
+        int[] newArray = new int[newSize];  // Create a new array with one less element
+
+        int newIndex = 0;  // Index for the new array
+
+        for (int i = 0; i < originalArray.length; i++) {
+            if (i != deletePosition) {
+                newArray[newIndex] = originalArray[i];
+                newIndex++;
+            }
+        }
+
+        // Print the contents of the new array
+        System.out.print("Contents of newArray: ");
+        for (int value : newArray) {
+            System.out.print(value + " ");
+        }
+    }
+}
+
 /*
-Total negative numbers: 5
+  Contents of newArray: 1 2 4 5 
 */
 
 /*
