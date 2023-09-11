@@ -151,3 +151,26 @@ public class EvenOddCounter {
 Total even numbers: 5
 Total odd numbers: 5
 */
+
+
+// 7. Write a Java program to count total number of negative elements in an array.
+
+public class NegativeElementCounter {
+    public static void main(String[] args) {
+        int[] numbers = {1, -2, 3, -4, 5, -6, 7, -8, 9, -10};
+        
+        int negativeCount = 0;
+        
+        for (int number : numbers) {
+            if (number < 0) {
+                negativeCount++;
+            }
+        }
+        
+        System.out.println("Total negative numbers: " + negativeCount);
+    }
+}
+
+/*
+Total negative numbers: 5
+*/
