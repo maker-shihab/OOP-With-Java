@@ -171,6 +171,65 @@ public class NegativeElementCounter {
     }
 }
 
+// 8. Write a Java program to copy all elements from an array to another array.
+
+public class ArrayCopy {
+    public static void main(String[] args) {
+        int[] sourceArray = {1, 2, 3, 4, 5};
+        int[] destinationArray = new int[sourceArray.length];
+        
+        // Copy elements from sourceArray to destinationArray
+        for (int i = 0; i < sourceArray.length; i++) {
+            destinationArray[i] = sourceArray[i];
+        }
+        
+        // Print the contents of destinationArray
+        System.out.print("Contents of destinationArray: ");
+        for (int value : destinationArray) {
+            System.out.print(value + " ");
+        }
+    }
+}
+
+/*
+Contents of destinationArray: 1 2 3 4 5 
+*/
+
+// 9. Write a Java program to insert an element in an array.
+
+public class ArrayInsertionExample {
+    public static void main(String[] args) {
+        int[] originalArray = {1, 2, 3, 4, 5};
+        int elementToInsert = 10;  // The element to insert
+        int insertPosition = 2;     // The position at which to insert the element
+
+        int[] newArray = new int[originalArray.length + 1];  // Create a new array with one more element
+
+        // Copy elements from the original array to the new array, inserting the new element
+        for (int i = 0, j = 0; i < newArray.length; i++) {
+            if (i == insertPosition) {
+                newArray[i] = elementToInsert;  // Insert the new element
+            } else {
+                newArray[i] = originalArray[j++];
+            }
+        }
+
+        // Print the contents of the new array
+        System.out.print("Contents of newArray: ");
+        for (int value : newArray) {
+            System.out.print(value + " ");
+        }
+    }
+}
+
+/*
+Contents of newArray: 1 2 10 3 4 5 
+*/
+
+/*
+Total negative numbers: 5
+*/
+
 /*
 Total negative numbers: 5
 */
