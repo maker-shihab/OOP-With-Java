@@ -262,6 +262,3 @@ public class ArrayDeletionExample {
   Contents of newArray: 1 2 4 5 
 */
 
-/*
-Total negative numbers: 5
-*/
