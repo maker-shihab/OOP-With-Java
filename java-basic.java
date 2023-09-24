@@ -322,3 +322,43 @@ class UniqueElementsExample1 {
 /* OutPut is: 
 [1, 3, 4, 5, 22, 6, 9, 10]
 */
+
+
+// 13.Write a Java program to count total number of duplicate elements in an array.
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 2, 7, 8, 8, 3};
+    int length = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Duplicate elements in given array: \n");
+
+    bool* visited = (bool*)malloc(length * sizeof(bool));
+
+    for (int i = 0; i < length; i++) {
+        visited[i] = false;
+    }
+
+    for (int i = 0; i < length; i++) {
+        if (!visited[i]) {
+            for (int j = i + 1; j < length; j++) {
+                if (arr[i] == arr[j]) {
+                    printf("%d\n", arr[i]);
+                    visited[j] = true;
+                }
+            }
+        }
+    }
+
+    free(visited);
+    return 0;
+}
+
+/* OutPut is: 
+Duplicate elements in given array: 
+2
+3
+8
+*/
