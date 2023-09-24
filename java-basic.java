@@ -291,7 +291,7 @@ public class Frequency {
         System.out.println("----------------------------------------");
     }
 }
-/*
+/* OutPut is:
 -----------------------
 | Element | Frequency |
 -----------------------
@@ -301,4 +301,24 @@ public class Frequency {
     3    |    1
     5    |    1
 -----------------------
+*/
+
+// 12.Write a Java program to print all unique elements in the array.
+import java.util.HashMap;
+
+class UniqueElementsExample1 {
+    public static void main(String args[]) {
+        int arrayWithDuplicates[] = {10, 3, 5, 3, 9, 22, 4, 3, 1, 5, 6 };
+        HashMap<Integer, Integer> hashmap = new HashMap<Integer, Integer>();
+
+        for (int j = 0; j < arrayWithDuplicates.length; j++) {
+            hashmap.put(arrayWithDuplicates[j], j);
+        }
+
+        System.out.println(hashmap.keySet());
+    }
+}
+
+/* OutPut is: 
+[1, 3, 4, 5, 22, 6, 9, 10]
 */
