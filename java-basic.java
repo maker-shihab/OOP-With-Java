@@ -362,3 +362,41 @@ Duplicate elements in given array:
 3
 8
 */
+
+// 14.Write a Java program to delete all duplicate elements from an array.
+
+
+import java.util.HashSet;
+import java.util.Arrays;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        int[] originalArray = {1, 2, 3, 4, 2, 5, 6, 1, 7};
+        
+        // Create a HashSet to store unique elements
+        HashSet<Integer> uniqueSet = new HashSet<>();
+        
+        // Iterate through the original array and add elements to the HashSet
+        for (int num : originalArray) {
+            uniqueSet.add(num);
+        }
+        
+        // Create a new array to store the unique elements
+        int[] uniqueArray = new int[uniqueSet.size()];
+        
+        // Convert the HashSet back to an array
+        int index = 0;
+        for (int num : uniqueSet) {
+            uniqueArray[index++] = num;
+        }
+        
+        // Print the array with duplicates removed
+        System.out.println("Array with duplicates removed:");
+        System.out.println(Arrays.toString(uniqueArray));
+    }
+}
+
+/* OutPut Is 
+Array with duplicates removed:
+[1, 2, 3, 4, 5, 6, 7]
+*/
