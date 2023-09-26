@@ -400,3 +400,35 @@ public class RemoveDuplicates {
 Array with duplicates removed:
 [1, 2, 3, 4, 5, 6, 7]
 */
+
+// 15.Write a Java program to merge two array to third array.
+
+import java.util.Arrays;
+
+public class MergeArrays {
+    public static void main(String[] args) {
+        int[] firstArray = {1, 2, 3};
+        int[] secondArray = {4, 5, 6};
+        
+        // Calculate the size of the merged array
+        int mergedSize = firstArray.length + secondArray.length;
+        
+        // Create the merged array
+        int[] mergedArray = new int[mergedSize];
+        
+        // Copy elements from the first array to the merged array
+        System.arraycopy(firstArray, 0, mergedArray, 0, firstArray.length);
+        
+        // Copy elements from the second array to the merged array
+        System.arraycopy(secondArray, 0, mergedArray, firstArray.length, secondArray.length);
+        
+        // Print the merged array
+        System.out.println("Merged Array: " + Arrays.toString(mergedArray));
+    }
+}
+
+
+/* OutPut Is 
+    Merged Array: 
+    [1, 2, 3, 4, 5, 6]
+*/
