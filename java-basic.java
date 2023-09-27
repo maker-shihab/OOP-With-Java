@@ -432,3 +432,32 @@ public class MergeArrays {
     Merged Array: 
     [1, 2, 3, 4, 5, 6]
 */
+
+// 16.Write a Java program to find reverse of an array.
+
+import java.util.Arrays;
+
+public class ReverseArray {
+    public static void main(String[] args) {
+        int[] originalArray = {1, 2, 3, 4, 5};
+        
+        // Calculate the length of the original array
+        int length = originalArray.length;
+        
+        // Create a new array to store the reversed elements
+        int[] reversedArray = new int[length];
+        
+        // Copy elements from the original array to the reversed array in reverse order
+        for (int i = 0; i < length; i++) {
+            reversedArray[i] = originalArray[length - 1 - i];
+        }
+        
+        // Print the reversed array
+        System.out.println("Original Array: " + Arrays.toString(originalArray));
+        System.out.println("Reversed Array: " + Arrays.toString(reversedArray));
+    }
+}
+/* OutPut Is 
+    Original Array: [1, 2, 3, 4, 5]
+    Reversed Array: [5, 4, 3, 2, 1]
+*/
