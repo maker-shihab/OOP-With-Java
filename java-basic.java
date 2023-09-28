@@ -461,3 +461,51 @@ public class ReverseArray {
     Original Array: [1, 2, 3, 4, 5]
     Reversed Array: [5, 4, 3, 2, 1]
 */
+
+// 17.Write a Java program to put even and odd elements of array in two separate array.
+public class Even_Odd {
+
+	// Print array method
+	public static void printArray(int[] array)
+	{
+		for (int i = 0; i < array.length; i++)
+			System.out.print(array[i] + " ");
+		System.out.println();
+	}
+	public static void main(String[] args)
+	{
+		int n = 8;
+		// array with N size
+		int array[] = { 23, 55, 54, 9, 76, 66, 2, 91 };
+
+		int evenSize = 0;
+		int oddSize = 0;
+		for (int i = 0; i < n; i++) {
+			if (array[i] % 2 == 0)
+				evenSize++;
+			else
+				oddSize++;
+		}
+		// odd and even arrays with size
+		int[] even = new int[evenSize];
+		int[] odd = new int[oddSize];
+		// odd and even array iterator
+		int j = 0, k = 0;
+		for (int i = 0; i < n; i++) {
+			if (array[i] % 2 == 0)
+				even[j++] = array[i];
+			else
+				odd[k++] = array[i];
+		}
+		// print array method
+		System.out.print("Even Array contains: ");
+		printArray(even);
+		System.out.print("Odd Array contains: ");
+		printArray(odd);
+	}
+}
+
+/* OutPut Is 
+    Even Array contains: 54 76 66 2 
+    Odd Array contains: 23 55 9 91 
+*/
