@@ -576,3 +576,54 @@ public class SortArray {
     Descending Order:
     9 6 5 5 2 1 
 */
+
+// 20.Write a Java program to sort even and odd elements of array separately.
+import java.util.Arrays;
+
+public class SortEvenOdd {
+    public static void main(String[] args) {
+        int[] arr = { 5, 2, 9, 1, 5, 6 };
+
+        // Separate even and odd elements
+        int[] evenArr = new int[arr.length];
+        int[] oddArr = new int[arr.length];
+
+        int evenCount = 0;
+        int oddCount = 0;
+
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                evenArr[evenCount] = num;
+                evenCount++;
+            } else {
+                oddArr[oddCount] = num;
+                oddCount++;
+            }
+        }
+
+        // Sort even and odd arrays
+        Arrays.sort(evenArr, 0, evenCount);
+        Arrays.sort(oddArr, 0, oddCount);
+
+        // Display sorted even elements
+        System.out.println("Sorted Even Elements:");
+        for (int i = 0; i < evenCount; i++) {
+            System.out.print(evenArr[i] + " ");
+        }
+
+        // Display sorted odd elements
+        System.out.println("\nSorted Odd Elements:");
+        for (int i = 0; i < oddCount; i++) {
+            System.out.print(oddArr[i] + " ");
+        }
+    }
+}
+
+
+/* OutPut Is 
+    Sorted Even Elements:
+    2 6 
+
+    Sorted Odd Elements:
+    1 5 5 9 
+*/
