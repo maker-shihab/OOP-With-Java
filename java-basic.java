@@ -627,3 +627,44 @@ public class SortEvenOdd {
     Sorted Odd Elements:
     1 5 5 9 
 */
+
+
+// 21.Write a Java program to left rotate an array.
+
+public class LeftRotateArray {
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 4, 5 };
+        int n = arr.length;
+        int d = 2; // Number of positions to rotate left
+
+        // Create a temporary array to store rotated elements
+        int[] temp = new int[d];
+
+        // Copy the first 'd' elements to the temp array
+        for (int i = 0; i < d; i++) {
+            temp[i] = arr[i];
+        }
+
+        // Shift the remaining elements of 'arr' to the left by 'd' positions
+        for (int i = d; i < n; i++) {
+            arr[i - d] = arr[i];
+        }
+
+        // Copy the elements from 'temp' back to 'arr' to complete the rotation
+        for (int i = 0; i < d; i++) {
+            arr[n - d + i] = temp[i];
+        }
+
+        // Print the rotated array
+        System.out.println("Left Rotated Array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+/* OutPut Is 
+    Left Rotated Array:
+    3 4 5 1 2 
+*/
