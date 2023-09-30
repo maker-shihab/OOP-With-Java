@@ -466,47 +466,82 @@ public class ReverseArray {
 
 public class Even_Odd {
 
-	// Print array method
-	public static void printArray(int[] array)
-	{
-		for (int i = 0; i < array.length; i++)
-			System.out.print(array[i] + " ");
-		System.out.println();
-	}
-	public static void main(String[] args)
-	{
-		int n = 8;
-		// array with N size
-		int array[] = { 23, 55, 54, 9, 76, 66, 2, 91 };
-
-		int evenSize = 0;
-		int oddSize = 0;
-		for (int i = 0; i < n; i++) {
-			if (array[i] % 2 == 0)
-				evenSize++;
-			else
-				oddSize++;
-		}
-		// odd and even arrays with size
-		int[] even = new int[evenSize];
-		int[] odd = new int[oddSize];
-		// odd and even array iterator
-		int j = 0, k = 0;
-		for (int i = 0; i < n; i++) {
-			if (array[i] % 2 == 0)
-				even[j++] = array[i];
-			else
-				odd[k++] = array[i];
-		}
-		// print array method
-		System.out.print("Even Array contains: ");
-		printArray(even);
-		System.out.print("Odd Array contains: ");
-		printArray(odd);
-	}
+   //main method
+   public static void main(String[] args){
+   
+      //Declare and initialize the array elements
+      int arr[] = { 21, 53, 99, 9, 67, 66, 2, 91 };
+      
+      //get the length of the array
+      int size = arr.length;
+      
+      //Logic for even array elements
+      System.out.println("Even numbers are:");
+      for(int i=0; i<size; i++){
+         if(arr[i]%2==0){
+         
+            //separates even numbers
+            System.out.print(arr[i]+" ");
+         }
+      }
+      
+      //Logic for odd array elements
+      System.out.println("\nOdd numbers are:");
+      for(int i=0; i<size; i++){
+         if(arr[i]%2==1){
+         
+            //separates odd numbers
+            System.out.print(arr[i]+" ");
+         }
+      }
+   }
 }
 
 /* OutPut Is 
-    Even Array contains: 54 76 66 2 
-    Odd Array contains: 23 55 9 91 
+    Even numbers are:
+    66 2 
+    Odd numbers are:
+    21 53 99 9 67 91 
+*/
+
+// 18.Write a Java program to search an element in an array.
+import java.util.Scanner;
+
+public class ArraySearch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Initialize an array
+        int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        System.out.print("Enter the element to search for: ");
+        int target = scanner.nextInt();
+
+        // Call the search function
+        int index = searchElement(array, target);
+
+        if (index != -1) {
+            System.out.println("Element found at index " + index);
+        } else {
+            System.out.println("Element not found in the array.");
+        }
+
+        scanner.close();
+    }
+
+    // Function to search for an element in the array
+    public static int searchElement(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i; // Element found, return its index
+            }
+        }
+        return -1; // Element not found in the array
+    }
+}
+
+
+/* OutPut Is 
+    Enter the element to search for: 5
+    Element found at index 4
 */
