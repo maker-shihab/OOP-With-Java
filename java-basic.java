@@ -545,3 +545,34 @@ public class ArraySearch {
     Enter the element to search for: 5
     Element found at index 4
 */
+
+// 19.Write a Java program to sort array elements in ascending or descending order.
+import java.util.Arrays;
+
+public class SortArray {
+    public static void main(String[] args) {
+        int[] arr = { 5, 2, 9, 1, 5, 6 };
+
+        // Sort the array in ascending order
+        Arrays.sort(arr);
+        System.out.println("Ascending Order:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+
+        // Sort the array in descending order
+        Arrays.sort(arr);
+        System.out.println("\nDescending Order:");
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+/* OutPut Is 
+    Ascending Order:
+    1 2 5 5 6 9 
+
+    Descending Order:
+    9 6 5 5 2 1 
+*/
