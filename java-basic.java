@@ -668,3 +668,44 @@ public class LeftRotateArray {
     Left Rotated Array:
     3 4 5 1 2 
 */
+
+
+// 22.Write a Java program to right rotate an array.
+
+public class RightRotateArray {
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 4, 5 };
+        int n = arr.length;
+        int d = 2; // Number of positions to rotate right
+
+        // Create a temporary array to store rotated elements
+        int[] temp = new int[d];
+
+        // Copy the last 'd' elements to the temp array
+        for (int i = 0; i < d; i++) {
+            temp[i] = arr[n - d + i];
+        }
+
+        // Shift the remaining elements of 'arr' to the right by 'd' positions
+        for (int i = n - 1; i >= d; i--) {
+            arr[i] = arr[i - d];
+        }
+
+        // Copy the elements from 'temp' back to 'arr' to complete the rotation
+        for (int i = 0; i < d; i++) {
+            arr[i] = temp[i];
+        }
+
+        // Print the rotated array
+        System.out.println("Right Rotated Array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+/* OutPut Is 
+    Right Rotated Array:
+    4 5 1 2 3 
+*/
